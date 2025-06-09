@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Minha Lista de Tarefas</h1>
+    </header>
+
+    <main>
+        <section aria-labelledby="new-task-heading">
+            <h2 id="new-task-heading" class="sr-only">Adicionar Nova Tarefa</h2>
+            <form id="todo-form">
+                <div class="form-group">
+                    <label for="new-task">Nova Tarefa:</label>
+                    <input type="text" id="new-task" name="new-task" placeholder="Ex: Comprar pão" required aria-describedby="task-input-description" maxlength="255">
+                    <small id="task-input-description" class="sr-only">Digite sua nova tarefa aqui, com no máximo 255 caracteres.</small>
+                </div>
+                <button type="submit">Adicionar Tarefa</button>
+            </form>
+        </section>
+
+        <section class="filters" aria-label="Filtros de Tarefas">
+            <button id="filter-all" class="filter-btn active" data-filter="all" aria-pressed="true">Todas</button>
+            <button id="filter-pending" class="filter-btn" data-filter="pending" aria-pressed="false">Pendentes</button>
+            <button id="filter-completed" class="filter-btn" data-filter="completed" aria-pressed="false">Concluídas</button>
+        </section>
+
+        <section class="task-counters" aria-label="Contadores de Tarefas">
+            <p>Total de tarefas: <span id="total-tasks">0</span></p>
+            <p>Concluídas: <span id="completed-tasks">0</span></p>
+        </section>
+
+        <section aria-labelledby="task-list-heading">
+            <h2 id="task-list-heading">Tarefas Atuais</h2>
+            <ul id="task-list" aria-live="polite">
+                </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Minha Lista de Tarefas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
